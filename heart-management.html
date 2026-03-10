@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Management - P-LifeSteal</title>
+    <meta name="description" content="Configure heart management settings in P-LifeSteal.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="menu-toggle">☰</button>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>P-LifeSteal</h2>
+        </div>
+        <nav>
+            <a href="index.html">📖 Getting Started</a>
+            <div class="sidebar-section">🔥 Usage</div>
+            <a href="commands.html">Commands</a>
+            <a href="permissions.html">Permissions</a>
+            <div class="sidebar-section">⚙ Configuration</div>
+            <a href="extra-heart.html">Extra Heart</a>
+            <a href="revive-book.html">Revive Book</a>
+            <a href="heart-management.html">Heart Management</a>
+            <a href="bans.html">Bans</a>
+            <a href="recipe.html">Recipe</a>
+            <a href="loot.html">Loot</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-section">🤝 Support</div>
+            <a href="https://www.spigotmc.org/resources/p-lifesteal.101967/" target="_blank">SpigotMC <span
+                    class="ext">↗</span></a>
+            <a href="https://discord.gg/8sjwaQTHGC" target="_blank">Discord <span class="ext">↗</span></a>
+            <a href="https://github.com/Head-BOB/P-LifeSteal" target="_blank">GitHub <span class="ext">↗</span></a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="content">
+            <h1>Heart Management</h1>
+            <p class="subtitle">Core settings for how hearts are gained and lost.</p>
+
+            <h2>removeHeartOnlyIfKilledByPlayer</h2>
+            <p>If set to <code>true</code>, the player will <strong>only lose a heart</strong> when killed by
+                <strong>another player</strong>. Deaths from mobs, fall damage, lava, etc. will not remove hearts.</p>
+            <p>If set to <code>false</code>, the player will lose a heart on <strong>any death</strong>.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>false</code></td>
+                </tr>
+            </table>
+
+            <h2>killHeartLimit</h2>
+            <p>The <strong>maximum</strong> amount of health points a player can reach by <strong>killing other
+                    players</strong>. Set to <code>0</code> to disable the limit.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Integer</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>0</code></td>
+                </tr>
+            </table>
+
+            <h2>reviveHeartAmount</h2>
+            <p>The amount of <strong>health points</strong> a player will have after being <strong>revived</strong>
+                using the Revive Book.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Integer</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>20</code> (10 hearts)</td>
+                </tr>
+            </table>
+
+            <div class="page-nav">
+                <a href="revive-book.html">
+                    <span class="label">← Configuration · Previous</span>
+                    <span class="title">Revive Book</span>
+                </a>
+                <a href="bans.html" class="next">
+                    <span class="label">Next · Configuration</span>
+                    <span class="title">Bans →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra Heart - P-LifeSteal</title>
+    <meta name="description" content="Configure the Extra Heart item in P-LifeSteal.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="menu-toggle">☰</button>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>P-LifeSteal</h2>
+        </div>
+        <nav>
+            <a href="index.html">📖 Getting Started</a>
+            <div class="sidebar-section">🔥 Usage</div>
+            <a href="commands.html">Commands</a>
+            <a href="permissions.html">Permissions</a>
+            <div class="sidebar-section">⚙ Configuration</div>
+            <a href="extra-heart.html">Extra Heart</a>
+            <a href="revive-book.html">Revive Book</a>
+            <a href="heart-management.html">Heart Management</a>
+            <a href="bans.html">Bans</a>
+            <a href="recipe.html">Recipe</a>
+            <a href="loot.html">Loot</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-section">🤝 Support</div>
+            <a href="https://www.spigotmc.org/resources/p-lifesteal.101967/" target="_blank">SpigotMC <span
+                    class="ext">↗</span></a>
+            <a href="https://discord.gg/8sjwaQTHGC" target="_blank">Discord <span class="ext">↗</span></a>
+            <a href="https://github.com/Head-BOB/P-LifeSteal" target="_blank">GitHub <span class="ext">↗</span></a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="content">
+            <h1>Extra Heart</h1>
+            <p class="subtitle">Configuration for the Extra Heart item.</p>
+
+            <h2>Template</h2>
+            <pre><code>heartItem:
+  enabled: true
+  name: "&c&lExtra Heart"
+  material: "RED_DYE"
+  lore:
+    - "&6Gives an extra heart!"
+    - "&7&oYou have ${chance}% to get an additional heart added."
+  loseChance: 50
+  addLimit: 0
+  withdraw-enabled: true
+  drop:
+    mode: "never"</code></pre>
+
+            <h2>enabled</h2>
+            <p>Defines whether the Extra Heart item is <strong>enabled</strong>. If set to <code>false</code>, the item
+                cannot be used.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>true</code></td>
+                </tr>
+            </table>
+
+            <h2>name</h2>
+            <p>The display <strong>name</strong> of the Extra Heart item. Supports color codes with <code>&</code> and
+                hex colors with <code>&#rrggbb</code>.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>&c&lExtra Heart</code></td>
+                </tr>
+            </table>
+
+            <h2>material</h2>
+            <p>The <strong>material</strong> of the Extra Heart item. Must be a valid material from the <a
+                    href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html" target="_blank">Spigot
+                    documentation</a>.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Material</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>RED_DYE</code></td>
+                </tr>
+            </table>
+
+            <h2>lore</h2>
+            <p>The <strong>lore</strong> (description) shown on the Extra Heart item. Supports color codes and the
+                <code>${chance}</code> placeholder.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>String List</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>["&6Gives an extra heart!", "&7&oYou have ${chance}% to get an additional heart added."]</code>
+                    </td>
+                </tr>
+            </table>
+
+            <h2>loseChance</h2>
+            <p>The <strong>chance</strong> (in %) that the player will <strong>lose a heart</strong> instead of gaining
+                one when using the Extra Heart item and the item fails. Set to <code>0</code> to disable heart loss on
+                failure.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Integer (0-100)</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>50</code></td>
+                </tr>
+            </table>
+
+            <h2>addLimit</h2>
+            <p>The <strong>maximum</strong> amount of health points a player can reach by using the Extra Heart item.
+                Set to <code>0</code> to disable the limit.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Integer</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>0</code></td>
+                </tr>
+            </table>
+
+            <h2>withdraw-enabled</h2>
+            <p>Whether the <code>/lifesteal withdraw</code> command is enabled, allowing players to convert one of their
+                hearts into an Extra Heart item.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>true</code></td>
+                </tr>
+            </table>
+
+            <h2>drop.mode</h2>
+            <p>Controls when hearts are <strong>dropped as items</strong> instead of being directly added to the
+                killer's health bar.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>never</code></td>
+                </tr>
+                <tr>
+                    <th>Options</th>
+                    <td><code>never</code> · <code>always</code> · <code>limit_exceeded</code></td>
+                </tr>
+            </table>
+            <ul>
+                <li><code>never</code> — Hearts are always added directly to the killer's health bar.</li>
+                <li><code>always</code> — Hearts always drop as an item on the ground.</li>
+                <li><code>limit_exceeded</code> — Hearts drop as an item only when the killer has reached the heart
+                    limit.</li>
+            </ul>
+
+            <div class="page-nav">
+                <a href="permissions.html">
+                    <span class="label">← Usage · Previous</span>
+                    <span class="title">Permissions</span>
+                </a>
+                <a href="revive-book.html" class="next">
+                    <span class="label">Next · Configuration</span>
+                    <span class="title">Revive Book →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

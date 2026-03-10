@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe - P-LifeSteal</title>
+    <meta name="description" content="Configure crafting recipes for P-LifeSteal items.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="menu-toggle">☰</button>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>P-LifeSteal</h2>
+        </div>
+        <nav>
+            <a href="index.html">📖 Getting Started</a>
+            <div class="sidebar-section">🔥 Usage</div>
+            <a href="commands.html">Commands</a>
+            <a href="permissions.html">Permissions</a>
+            <div class="sidebar-section">⚙ Configuration</div>
+            <a href="extra-heart.html">Extra Heart</a>
+            <a href="revive-book.html">Revive Book</a>
+            <a href="heart-management.html">Heart Management</a>
+            <a href="bans.html">Bans</a>
+            <a href="recipe.html">Recipe</a>
+            <a href="loot.html">Loot</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-section">🤝 Support</div>
+            <a href="https://www.spigotmc.org/resources/p-lifesteal.101967/" target="_blank">SpigotMC <span
+                    class="ext">↗</span></a>
+            <a href="https://discord.gg/8sjwaQTHGC" target="_blank">Discord <span class="ext">↗</span></a>
+            <a href="https://github.com/Head-BOB/P-LifeSteal" target="_blank">GitHub <span class="ext">↗</span></a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="content">
+            <h1>Recipe</h1>
+            <p class="subtitle">Configure crafting recipes for the Extra Heart and Revive Book items.</p>
+
+            <h2>Default Recipes</h2>
+            <p>By default, P-LifeSteal comes with two recipes:</p>
+
+            <h3>Extra Heart (Recipe 1)</h3>
+            <p>A shaped crafting recipe using 8 Diamond Blocks surrounding a Nether Star.</p>
+            <pre><code>| Diamond Block | Diamond Block | Diamond Block |
+| Diamond Block | Nether Star   | Diamond Block |
+| Diamond Block | Diamond Block | Diamond Block |</code></pre>
+
+            <h3>Revive Book (Recipe 2)</h3>
+            <p>A shaped crafting recipe using 6 Totems of Undying, 2 Enchanted Golden Apples, and a Book.</p>
+            <pre><code>| Totem of Undying       | Totem of Undying       | Totem of Undying       |
+| Enchanted Golden Apple | Book                   | Enchanted Golden Apple |
+| Totem of Undying       | Totem of Undying       | Totem of Undying       |</code></pre>
+
+            <h2>Template</h2>
+            <pre><code>recipe:
+  enabled: true
+  recipes:
+    1:
+      recipe-enabled: true
+      item: "extra_heart"
+      shaped: true
+      extraHeartItemUseSuccess: 100
+      discover: false
+      items:
+        - "DIAMOND_BLOCK"
+        - "DIAMOND_BLOCK"
+        - "DIAMOND_BLOCK"
+        - "DIAMOND_BLOCK"
+        - "NETHER_STAR"
+        - "DIAMOND_BLOCK"
+        - "DIAMOND_BLOCK"
+        - "DIAMOND_BLOCK"
+        - "DIAMOND_BLOCK"
+    2:
+      recipe-enabled: true
+      item: "revive_book"
+      shaped: true
+      discover: true
+      items:
+        - "TOTEM_OF_UNDYING"
+        - "TOTEM_OF_UNDYING"
+        - "TOTEM_OF_UNDYING"
+        - "ENCHANTED_GOLDEN_APPLE"
+        - "BOOK"
+        - "ENCHANTED_GOLDEN_APPLE"
+        - "TOTEM_OF_UNDYING"
+        - "TOTEM_OF_UNDYING"
+        - "TOTEM_OF_UNDYING"</code></pre>
+
+            <h2>enabled</h2>
+            <p>Defines whether the crafting <strong>recipe system</strong> is enabled. If set to <code>false</code>, no
+                custom recipes will be registered.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>true</code></td>
+                </tr>
+            </table>
+
+            <h2>item</h2>
+            <p>The <strong>item</strong> that will be crafted by this recipe. Must be either <code>extra_heart</code> or
+                <code>revive_book</code>.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <th>Options</th>
+                    <td><code>extra_heart</code> · <code>revive_book</code></td>
+                </tr>
+            </table>
+
+            <h2>recipes</h2>
+            <p>A numbered list of <strong>recipe definitions</strong>. You can add as many as you want by adding new
+                numbered entries (e.g. <code>3:</code>, <code>4:</code>, etc.).</p>
+
+            <h2>recipe-enabled</h2>
+            <p>Defines whether this <strong>specific recipe</strong> is enabled. Allows you to disable individual
+                recipes without removing them from the config.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>true</code></td>
+                </tr>
+            </table>
+
+            <h2>shaped</h2>
+            <p>If set to <code>true</code>, the recipe is <strong>shaped</strong> (items must be placed in exact
+                positions). If <code>false</code>, the recipe is <strong>shapeless</strong> (items can be placed
+                anywhere in the crafting grid).</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>true</code></td>
+                </tr>
+            </table>
+
+            <h2>discover</h2>
+            <p>If set to <code>true</code>, the recipe will be <strong>automatically discovered</strong> when a player
+                joins the server (shown in the recipe book).</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>false</code></td>
+                </tr>
+            </table>
+
+            <h2>extraHeartItemUseSuccess</h2>
+            <p>The <strong>success chance</strong> (in %) of the Extra Heart item crafted by this recipe. Only applies
+                when <code>item</code> is <code>extra_heart</code>.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Integer (0-100)</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>100</code></td>
+                </tr>
+            </table>
+
+            <h2>items</h2>
+            <p>A list of 9 <strong>materials</strong> that define the crafting grid. For shaped recipes, items are
+                placed in reading order (left-to-right, top-to-bottom). Materials must be valid entries from the <a
+                    href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html" target="_blank">Spigot
+                    documentation</a>.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Material List (9 items)</td>
+                </tr>
+            </table>
+            <pre><code>Crafting Grid Positions:
+| A (1) | B (2) | C (3) |
+| D (4) | E (5) | F (6) |
+| G (7) | H (8) | I (9) |</code></pre>
+
+            <div class="page-nav">
+                <a href="bans.html">
+                    <span class="label">← Configuration · Previous</span>
+                    <span class="title">Bans</span>
+                </a>
+                <a href="loot.html" class="next">
+                    <span class="label">Next · Configuration</span>
+                    <span class="title">Loot →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

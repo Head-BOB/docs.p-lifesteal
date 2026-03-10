@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loot - P-LifeSteal</title>
+    <meta name="description" content="Configure loot generation in chests and minecarts for P-LifeSteal.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="menu-toggle">☰</button>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>P-LifeSteal</h2>
+        </div>
+        <nav>
+            <a href="index.html">📖 Getting Started</a>
+            <div class="sidebar-section">🔥 Usage</div>
+            <a href="commands.html">Commands</a>
+            <a href="permissions.html">Permissions</a>
+            <div class="sidebar-section">⚙ Configuration</div>
+            <a href="extra-heart.html">Extra Heart</a>
+            <a href="revive-book.html">Revive Book</a>
+            <a href="heart-management.html">Heart Management</a>
+            <a href="bans.html">Bans</a>
+            <a href="recipe.html">Recipe</a>
+            <a href="loot.html">Loot</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-section">🤝 Support</div>
+            <a href="https://www.spigotmc.org/resources/p-lifesteal.101967/" target="_blank">SpigotMC <span
+                    class="ext">↗</span></a>
+            <a href="https://discord.gg/8sjwaQTHGC" target="_blank">Discord <span class="ext">↗</span></a>
+            <a href="https://github.com/Head-BOB/P-LifeSteal" target="_blank">GitHub <span class="ext">↗</span></a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="content">
+            <h1>Loot</h1>
+            <p class="subtitle">Configure natural loot generation in chests and minecarts across different worlds.</p>
+
+            <h2>Template</h2>
+            <pre><code>loot:
+  enabled: true
+  worlds:
+    world:
+      chanceForHeartToGenerate: 50
+      heartAddChance: 50
+      chanceForReviveBookToGenerate: 50
+    world_nether:
+      chanceForHeartToGenerate: 75
+      heartAddChance: 75
+      chanceForReviveBookToGenerate: 75
+    world_the_end:
+      chanceForHeartToGenerate: 100
+      heartAddChance: 100
+      chanceForReviveBookToGenerate: 100</code></pre>
+
+            <h2>enabled</h2>
+            <p>Defines whether the <strong>loot generation</strong> system is enabled. If set to <code>false</code>, no
+                P-LifeSteal items will spawn in chests or minecarts.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>true</code></td>
+                </tr>
+            </table>
+
+            <h2>worlds</h2>
+            <p>A list of <strong>worlds</strong> where loot generation is active. Each world has its own chance
+                settings. Add or remove world entries to control which worlds get loot.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Section</td>
+                </tr>
+                <tr>
+                    <th>Default worlds</th>
+                    <td><code>world</code>, <code>world_nether</code>, <code>world_the_end</code></td>
+                </tr>
+            </table>
+
+            <h2>chanceForHeartToGenerate</h2>
+            <p>The <strong>chance</strong> (in %) that an Extra Heart item will be placed into a chest or minecart when
+                a chunk is populated.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Integer (0-100)</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>50</code> (overworld) · <code>75</code> (nether) · <code>100</code> (end)</td>
+                </tr>
+            </table>
+
+            <h2>heartAddChance</h2>
+            <p>The <strong>success chance</strong> (in %) of the Extra Heart item found as loot. This is the chance that
+                using the loot heart will actually add a heart to the player.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Integer (0-100)</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>50</code> (overworld) · <code>75</code> (nether) · <code>100</code> (end)</td>
+                </tr>
+            </table>
+
+            <h2>chanceForReviveBookToGenerate</h2>
+            <p>The <strong>chance</strong> (in %) that a Revive Book will be placed into a chest or minecart when a
+                chunk is populated.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Integer (0-100)</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>50</code> (overworld) · <code>75</code> (nether) · <code>100</code> (end)</td>
+                </tr>
+            </table>
+
+            <div class="page-nav">
+                <a href="recipe.html">
+                    <span class="label">← Configuration · Previous</span>
+                    <span class="title">Recipe</span>
+                </a>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

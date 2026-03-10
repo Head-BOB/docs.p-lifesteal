@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revive Book - P-LifeSteal</title>
+    <meta name="description" content="Configure the Revive Book item in P-LifeSteal.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="menu-toggle">☰</button>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>P-LifeSteal</h2>
+        </div>
+        <nav>
+            <a href="index.html">📖 Getting Started</a>
+            <div class="sidebar-section">🔥 Usage</div>
+            <a href="commands.html">Commands</a>
+            <a href="permissions.html">Permissions</a>
+            <div class="sidebar-section">⚙ Configuration</div>
+            <a href="extra-heart.html">Extra Heart</a>
+            <a href="revive-book.html">Revive Book</a>
+            <a href="heart-management.html">Heart Management</a>
+            <a href="bans.html">Bans</a>
+            <a href="recipe.html">Recipe</a>
+            <a href="loot.html">Loot</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-section">🤝 Support</div>
+            <a href="https://www.spigotmc.org/resources/p-lifesteal.101967/" target="_blank">SpigotMC <span
+                    class="ext">↗</span></a>
+            <a href="https://discord.gg/8sjwaQTHGC" target="_blank">Discord <span class="ext">↗</span></a>
+            <a href="https://github.com/Head-BOB/P-LifeSteal" target="_blank">GitHub <span class="ext">↗</span></a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="content">
+            <h1>Revive Book</h1>
+            <p class="subtitle">Configuration for the Revive Book item.</p>
+
+            <h2>Template</h2>
+            <pre><code>reviveBook:
+  enabled: true
+  name: "&c&lRevive Book"
+  material: "ENCHANTED_BOOK"
+  inventory-title: "&a&lRevive player!"
+  lore:
+    - "&6Revives targeted player!"
+  skull-lore:
+    - "&aPress on the head to revive."
+  unbreakable: false</code></pre>
+
+            <h2>enabled</h2>
+            <p>Defines whether the Revive Book item is <strong>enabled</strong>. If set to <code>false</code>, the item
+                cannot be used.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>true</code></td>
+                </tr>
+            </table>
+
+            <h2>name</h2>
+            <p>The display <strong>name</strong> of the Revive Book item. Supports color codes with <code>&</code> and
+                hex colors with <code>&#rrggbb</code>.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>&c&lRevive Book</code></td>
+                </tr>
+            </table>
+
+            <h2>material</h2>
+            <p>The <strong>material</strong> of the Revive Book item. Must be a valid material from the <a
+                    href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html" target="_blank">Spigot
+                    documentation</a>.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Material</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>ENCHANTED_BOOK</code></td>
+                </tr>
+            </table>
+
+            <h2>inventory-title</h2>
+            <p>The <strong>title</strong> of the inventory that opens when using the Revive Book, showing all banned
+                players as skulls to choose from.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>String</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>&a&lRevive player!</code></td>
+                </tr>
+            </table>
+
+            <h2>lore</h2>
+            <p>The <strong>lore</strong> (description) shown on the Revive Book item. Supports color codes.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>String List</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>["&6Revives targeted player!"]</code></td>
+                </tr>
+            </table>
+
+            <h2>skull-lore</h2>
+            <p>The <strong>lore</strong> shown on each player skull inside the Revive Book inventory.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>String List</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>["&aPress on the head to revive."]</code></td>
+                </tr>
+            </table>
+
+            <h2>unbreakable</h2>
+            <p>If set to <code>true</code>, the Revive Book item will <strong>not be consumed</strong> after reviving a
+                player.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>false</code></td>
+                </tr>
+            </table>
+
+            <div class="page-nav">
+                <a href="extra-heart.html">
+                    <span class="label">← Configuration · Previous</span>
+                    <span class="title">Extra Heart</span>
+                </a>
+                <a href="heart-management.html" class="next">
+                    <span class="label">Next · Configuration</span>
+                    <span class="title">Heart Management →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

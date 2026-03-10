@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bans - P-LifeSteal</title>
+    <meta name="description" content="Configure ban settings for players with no hearts in P-LifeSteal.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="menu-toggle">☰</button>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>P-LifeSteal</h2>
+        </div>
+        <nav>
+            <a href="index.html">📖 Getting Started</a>
+            <div class="sidebar-section">🔥 Usage</div>
+            <a href="commands.html">Commands</a>
+            <a href="permissions.html">Permissions</a>
+            <div class="sidebar-section">⚙ Configuration</div>
+            <a href="extra-heart.html">Extra Heart</a>
+            <a href="revive-book.html">Revive Book</a>
+            <a href="heart-management.html">Heart Management</a>
+            <a href="bans.html">Bans</a>
+            <a href="recipe.html">Recipe</a>
+            <a href="loot.html">Loot</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-section">🤝 Support</div>
+            <a href="https://www.spigotmc.org/resources/p-lifesteal.101967/" target="_blank">SpigotMC <span
+                    class="ext">↗</span></a>
+            <a href="https://discord.gg/8sjwaQTHGC" target="_blank">Discord <span class="ext">↗</span></a>
+            <a href="https://github.com/Head-BOB/P-LifeSteal" target="_blank">GitHub <span class="ext">↗</span></a>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="content">
+            <h1>Bans</h1>
+            <p class="subtitle">Settings for banning players who lose all their hearts.</p>
+
+            <h2>Template</h2>
+            <pre><code>banOn0Hearts: true
+broadcastBanFrom0Hearts: true
+banTime: 0</code></pre>
+
+            <h2>banOn0Hearts</h2>
+            <p>If set to <code>true</code>, players will be <strong>banned</strong> (kicked and prevented from joining)
+                when they reach <strong>0 hearts</strong>.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>true</code></td>
+                </tr>
+            </table>
+
+            <h2>broadcastBanFrom0Hearts</h2>
+            <p>If set to <code>true</code>, when a player is banned for having 0 hearts, a <strong>broadcast
+                    message</strong> will be sent to all online players.</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Boolean</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>true</code></td>
+                </tr>
+            </table>
+
+            <h2>banTime</h2>
+            <p>The <strong>duration</strong> (in minutes) that a player will be banned for losing all hearts. Set to
+                <code>0</code> for a <strong>permanent ban</strong> (until manually unbanned or revived).</p>
+            <table class="config-table">
+                <tr>
+                    <th>Type</th>
+                    <td>Integer (minutes)</td>
+                </tr>
+                <tr>
+                    <th>Default</th>
+                    <td><code>0</code> (permanent)</td>
+                </tr>
+            </table>
+
+            <div class="page-nav">
+                <a href="heart-management.html">
+                    <span class="label">← Configuration · Previous</span>
+                    <span class="title">Heart Management</span>
+                </a>
+                <a href="recipe.html" class="next">
+                    <span class="label">Next · Configuration</span>
+                    <span class="title">Recipe →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
